@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Testing Lab | Meta-Inf Style</title>
+    <script src="https://db7913d4-1505-466a-b4aa-2c6ffc274afb.hello.atlassian-dev.net/x1/KHAmRMk8dJVWGgZnhxsjODh56dk?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmZWVkYmFja1R5cGVJZCI6MTUwMDA1LCJzY29wZUVudGl0eUlkIjoiMTAyMzMiLCJ1c2VySWQiOiJlbWJlZGRlZC1yYXRpbmciLCJleHAiOjE3NzQ1MzUxMDUsImlhdCI6MTc3MTk0MzEwNX0.nxmSCol29qhPDTrZFGmYZ9lkM5iFHlvBPhoOwwdd1cQ" async></script>
+    
+    <style>
+        /* Meta-Inf / Atlassian Inspiráció */
+        :root {
+            --primary-blue: #0052CC;
+            --hover-blue: #0747A6;
+            --bg-gray: #F4F5F7;
+            --text-dark: #172B4D;
+            --text-light: #5E6C84;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            background-color: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+        }
+
+        .header-content {
+            width: 100%;
+            max-width: 1000px;
+            font-weight: bold;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+
+        main {
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .hero-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        /* A gomb stílusa */
+        .rate-button {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .rate-button:hover {
+            background-color: var(--hover-blue);
+        }
+
+        .rate-button:active {
+            transform: translateY(1px);
+        }
+
+        /* Public Widget Szekció */
+        .ratings-section {
+            margin-top: 4rem;
+            width: 100%;
+            text-align: left;
+        }
+
+        .ratings-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            border-bottom: 2px solid #EBECF0;
+            padding-bottom: 0.5rem;
+        }
+
+        #trustee-widget-150005 {
+            background: transparent;
+            min-height: 100px;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">App Testing Lab</div>
+    </header>
+
+    <main>
+        <div class="hero-card">
+            <h1>Segíts elnevezni az új appunkat!</h1>
+            <p>
+                Segíts nevet választani! A Trustee megújul, és a Te ötletedre is kíváncsiak vagyunk. Kattints a gombra, adj egy értékelést, és a komment mezőben írd meg a javaslatodat egy új névre és öteltre!
+            </p>
+            
+            <button class="rate-button" onclick="openRatingWidget()">
+                Rate Us
+            </button>
+        </div>
+
+        <div class="ratings-section">
+            <div class="ratings-title">Friss értékelések</div>
+            <div id="trustee-widget-150005"></div>
+            <script src="https://db7913d4-1505-466a-b4aa-2c6ffc274afb.hello.atlassian-dev.net/x1/OdYCs6WLTKvNGXo33JaT6v662K0/150005" async></script>
+        </div>
+        <button onclick="window.trustee_widget_60002.open()"> Rate Us </button>
+
+    </main>
+
+    <footer>
+        &copy; 2024 Feedback Project - Inspirálta a Meta-Inf
+    </footer>
+
+    <script>
+        function openRatingWidget() {
+            if (window.trustee_widget_150005 && typeof window.trustee_widget_150005.open === 'function') {
+                window.trustee_widget_150005.open();
+            } else {
+                console.warn("A widget még töltődik... Kérlek várj egy pillanatot.");
+                alert("Az értékelő ablak még töltődik, próbáld újra egy pillanat múlva!");
+            }
+        }
+    </script>
+
+    <script src="https://db7913d4-1505-466a-b4aa-2c6ffc274afb.hello.atlassian-dev.net/x1/sxNCTIfC2sZI73L_NHefNymKtgc?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmZWVkYmFja1R5cGVJZCI6NjAwMDIsInNjb3BlRW50aXR5SWQiOiIxMDE2NSIsInVzZXJJZCI6ImVtYmVkZGVkLXJhdGluZyIsImV4cCI6MTc3NDUzNTg4MywiaWF0IjoxNzcxOTQzODgzfQ.Ylh9fvYo3OFHuR-qRUOr7PLDuDPPAVC-zPOgPtY9Wb4" async></script>
+
+</body>
+</html>
